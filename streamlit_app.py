@@ -8,7 +8,7 @@ st.title(f":cup_with_straw: Customize Your Smoothie :cup_with_straw:")
 name_on_order = st.text_input('Name On Smoothie')
 st.write('The Name On Your Smoothie will be:', name_on_order)
 
-cnx.st.connection("snowflake")
+cnx = st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
